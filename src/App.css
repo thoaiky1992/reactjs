@@ -1,0 +1,11 @@
+.login {
+  padding: 20px;
+}
+.email, .password {
+  margin-left: 10px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+
+
