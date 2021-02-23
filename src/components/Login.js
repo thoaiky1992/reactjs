@@ -1,4 +1,5 @@
 import React from 'react';
+import io from 'socket.io';
 class Login extends React.Component {
     constructor(props){
         super(props)
@@ -8,7 +9,14 @@ class Login extends React.Component {
     handleClick = () => {
         this.props.history.push('/user')
         localStorage.setItem('token',123456)
-
+    }
+    componentDidMount() {
+        const socket = io("http://localhost:4000",{
+            reconnectionDelayMax: 10000,
+            auth: {
+                token: "123"
+            },
+        })
     }
     render() {
         return (
